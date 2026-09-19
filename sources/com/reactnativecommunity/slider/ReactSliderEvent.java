@@ -1,0 +1,50 @@
+package com.reactnativecommunity.slider;
+
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.uimanager.events.Event;
+
+/* JADX INFO: loaded from: classes4.dex */
+public class ReactSliderEvent extends Event<ReactSliderEvent> {
+    public static final String EVENT_NAME = "topChange";
+    private final boolean mFromUser;
+    private final double mValue;
+
+    @Override // com.facebook.react.uimanager.events.Event
+    public short getCoalescingKey() {
+        return (short) 0;
+    }
+
+    public ReactSliderEvent(int i, double d, boolean z) {
+        super(i);
+        this.mValue = d;
+        this.mFromUser = z;
+    }
+
+    public double getValue() {
+        return this.mValue;
+    }
+
+    public boolean isFromUser() {
+        return this.mFromUser;
+    }
+
+    @Override // com.facebook.react.uimanager.events.Event
+    public String getEventName() {
+        return "topChange";
+    }
+
+    @Override // com.facebook.react.uimanager.events.Event
+    /* JADX INFO: renamed from: getEventData */
+    protected WritableMap getEvent() {
+        return serializeEventData();
+    }
+
+    private WritableMap serializeEventData() {
+        WritableMap writableMapCreateMap = Arguments.createMap();
+        writableMapCreateMap.putInt("target", getViewTag());
+        writableMapCreateMap.putDouble("value", getValue());
+        writableMapCreateMap.putBoolean("fromUser", isFromUser());
+        return writableMapCreateMap;
+    }
+}

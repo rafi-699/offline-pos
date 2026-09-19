@@ -1,0 +1,16 @@
+package com.google.android.gms.internal.ads;
+
+/* JADX INFO: compiled from: com.google.android.gms:play-services-ads-api@@25.2.0 */
+/* JADX INFO: loaded from: classes3.dex */
+public final class zzidz extends zzicl {
+    private final zziee zza;
+
+    public zzidz(zziee zzieeVar) {
+        this.zza = zzieeVar;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzifx
+    public final /* synthetic */ Object zzb(zzide zzideVar, zzido zzidoVar) throws zziet {
+        return zziee.zzbO(this.zza, zzideVar, zzidoVar);
+    }
+}

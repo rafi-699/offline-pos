@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:left="1dp"
+        android:right="1dp">
+        <selector>
+            <item
+                android:state_selected="true"
+                android:drawable="@drawable/tab_indicator_selected"/>
+            <item android:drawable="@drawable/tab_indicator_default"/>
+        </selector>
+    </item>
+</layer-list>

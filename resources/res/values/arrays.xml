@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="assume_strong_biometrics_models">
+        <item>Pixel 4</item>
+        <item>Pixel 4 XL</item>
+    </array>
+    <array name="crypto_fingerprint_fallback_prefixes">
+    </array>
+    <array name="crypto_fingerprint_fallback_vendors">
+        <item>samsung</item>
+    </array>
+    <array name="delay_showing_prompt_models">
+        <item>Pixel 4</item>
+        <item>Pixel 4 XL</item>
+    </array>
+    <array name="exo_controls_playback_speeds">
+        <item>0.25x</item>
+        <item>0.5x</item>
+        <item>0.75x</item>
+        <item>Normal</item>
+        <item>1.25x</item>
+        <item>1.5x</item>
+        <item>2x</item>
+    </array>
+    <array name="hide_fingerprint_instantly_prefixes">
+        <item>SM-A50</item>
+        <item>SM-G973</item>
+        <item>SM-G975</item>
+        <item>SM-G977</item>
+        <item>SM-G770</item>
+        <item>SM-N970</item>
+        <item>SM-N971</item>
+        <item>SM-N975</item>
+        <item>SM-N976</item>
+        <item>SM-N770</item>
+        <item>SC-03L</item>
+        <item>SC-04L</item>
+        <item>SC-05L</item>
+        <item>SC-01M</item>
+        <item>SCV41</item>
+        <item>SCV42</item>
+        <item>SCV45</item>
+    </array>
+    <array name="label_material_animal">
+        <item>?unknown_ref: 7f08007e</item>
+        <item>?unknown_ref: 7f080089</item>
+        <item>?unknown_ref: 7f080094</item>
+        <item>?unknown_ref: 7f080099</item>
+        <item>?unknown_ref: 7f08009a</item>
+        <item>?unknown_ref: 7f08009b</item>
+        <item>?unknown_ref: 7f08009c</item>
+        <item>?unknown_ref: 7f08009d</item>
+        <item>?unknown_ref: 7f08009e</item>
+        <item>?unknown_ref: 7f08007f</item>
+        <item>?unknown_ref: 7f080080</item>
+        <item>?unknown_ref: 7f080081</item>
+        <item>?unknown_ref: 7f080082</item>
+        <item>?unknown_ref: 7f080083</item>
+        <item>?unknown_ref: 7f080084</item>
+        <item>?unknown_ref: 7f080085</item>
+        <item>?unknown_ref: 7f080086</item>
+        <item>?unknown_ref: 7f080087</item>
+        <item>?unknown_ref: 7f080088</item>
+        <item>?unknown_ref: 7f08008a</item>
+        <item>?unknown_ref: 7f08008b</item>
+        <item>?unknown_ref: 7f08008c</item>
+        <item>?unknown_ref: 7f08008d</item>
+        <item>?unknown_ref: 7f08008e</item>
+        <item>?unknown_ref: 7f08008f</item>
+        <item>?unknown_ref: 7f080090</item>
+        <item>?unknown_ref: 7f080091</item>
+        <item>?unknown_ref: 7f080092</item>
+        <item>?unknown_ref: 7f080093</item>
+        <item>?unknown_ref: 7f080095</item>
+        <item>?unknown_ref: 7f080096</item>
+        <item>?unknown_ref: 7f080097</item>
+        <item>?unknown_ref: 7f080098</item>
+    </array>
+    <array name="label_material_avatar">
+        <item>?unknown_ref: 7f0804b2</item>
+        <item>?unknown_ref: 7f0804b3</item>
+        <item>?unknown_ref: 7f0804b4</item>
+        <item>?unknown_ref: 7f0804b5</item>
+        <item>?unknown_ref: 7f0804b6</item>
+        <item>?unknown_ref: 7f0804b7</item>
+        <item>?unknown_ref: 7f0804b8</item>
+        <item>?unknown_ref: 7f0804b9</item>
+    </array>
+    <array name="label_material_cartoon">
+        <item>?unknown_ref: 7f0804d0</item>
+        <item>?unknown_ref: 7f0804d1</item>
+        <item>?unknown_ref: 7f0804d2</item>
+        <item>?unknown_ref: 7f0804d3</item>
+    </array>
+    <array name="label_material_food">
+        <item>?unknown_ref: 7f080584</item>
+        <item>?unknown_ref: 7f08058f</item>
+        <item>?unknown_ref: 7f080598</item>
+        <item>?unknown_ref: 7f080599</item>
+        <item>?unknown_ref: 7f08059a</item>
+        <item>?unknown_ref: 7f08059b</item>
+        <item>?unknown_ref: 7f08059c</item>
+        <item>?unknown_ref: 7f08059d</item>
+        <item>?unknown_ref: 7f08059e</item>
+        <item>?unknown_ref: 7f080585</item>
+        <item>?unknown_ref: 7f080586</item>
+        <item>?unknown_ref: 7f080587</item>
+        <item>?unknown_ref: 7f080588</item>
+        <item>?unknown_ref: 7f080589</item>
+        <item>?unknown_ref: 7f08058a</item>
+        <item>?unknown_ref: 7f08058b</item>
+        <item>?unknown_ref: 7f08058c</item>
+        <item>?unknown_ref: 7f08058d</item>
+        <item>?unknown_ref: 7f08058e</item>
+        <item>?unknown_ref: 7f080590</item>
+        <item>?unknown_ref: 7f080591</item>
+        <item>?unknown_ref: 7f080592</item>
+        <item>?unknown_ref: 7f080593</item>
+        <item>?unknown_ref: 7f080594</item>
+        <item>?unknown_ref: 7f080595</item>
+        <item>?unknown_ref: 7f080596</item>
+        <item>?unknown_ref: 7f080597</item>
+    </array>
+    <array name="label_material_fruit">
+        <item>?unknown_ref: 7f08059f</item>
+        <item>?unknown_ref: 7f0805aa</item>
+        <item>?unknown_ref: 7f0805ae</item>
+        <item>?unknown_ref: 7f0805af</item>
+        <item>?unknown_ref: 7f0805b0</item>
+        <item>?unknown_ref: 7f0805b1</item>
+        <item>?unknown_ref: 7f0805b2</item>
+        <item>?unknown_ref: 7f0805b3</item>
+        <item>?unknown_ref: 7f0805b4</item>
+        <item>?unknown_ref: 7f0805a0</item>
+        <item>?unknown_ref: 7f0805a1</item>
+        <item>?unknown_ref: 7f0805a2</item>
+        <item>?unknown_ref: 7f0805a3</item>
+        <item>?unknown_ref: 7f0805a4</item>
+        <item>?unknown_ref: 7f0805a5</item>
+        <item>?unknown_ref: 7f0805a6</item>
+        <item>?unknown_ref: 7f0805a7</item>
+        <item>?unknown_ref: 7f0805a8</item>
+        <item>?unknown_ref: 7f0805a9</item>
+        <item>?unknown_ref: 7f0805ab</item>
+        <item>?unknown_ref: 7f0805ac</item>
+        <item>?unknown_ref: 7f0805ad</item>
+    </array>
+    <array name="label_material_kitchenware">
+        <item>?unknown_ref: 7f08065c</item>
+        <item>?unknown_ref: 7f080667</item>
+        <item>?unknown_ref: 7f080672</item>
+        <item>?unknown_ref: 7f080674</item>
+        <item>?unknown_ref: 7f080675</item>
+        <item>?unknown_ref: 7f080676</item>
+        <item>?unknown_ref: 7f080677</item>
+        <item>?unknown_ref: 7f080678</item>
+        <item>?unknown_ref: 7f080679</item>
+        <item>?unknown_ref: 7f08065d</item>
+        <item>?unknown_ref: 7f08065e</item>
+        <item>?unknown_ref: 7f08065f</item>
+        <item>?unknown_ref: 7f080660</item>
+        <item>?unknown_ref: 7f080661</item>
+        <item>?unknown_ref: 7f080662</item>
+        <item>?unknown_ref: 7f080663</item>
+        <item>?unknown_ref: 7f080664</item>
+        <item>?unknown_ref: 7f080665</item>
+        <item>?unknown_ref: 7f080666</item>
+        <item>?unknown_ref: 7f080668</item>
+        <item>?unknown_ref: 7f080669</item>
+        <item>?unknown_ref: 7f08066a</item>
+        <item>?unknown_ref: 7f08066b</item>
+        <item>?unknown_ref: 7f08066c</item>
+        <item>?unknown_ref: 7f08066d</item>
+        <item>?unknown_ref: 7f08066e</item>
+        <item>?unknown_ref: 7f08066f</item>
+        <item>?unknown_ref: 7f080670</item>
+        <item>?unknown_ref: 7f080671</item>
+        <item>?unknown_ref: 7f080673</item>
+    </array>
+    <array name="label_material_office">
+        <item>?unknown_ref: 7f08073b</item>
+        <item>?unknown_ref: 7f080746</item>
+        <item>?unknown_ref: 7f08074f</item>
+        <item>?unknown_ref: 7f080750</item>
+        <item>?unknown_ref: 7f080751</item>
+        <item>?unknown_ref: 7f080752</item>
+        <item>?unknown_ref: 7f080753</item>
+        <item>?unknown_ref: 7f080754</item>
+        <item>?unknown_ref: 7f080755</item>
+        <item>?unknown_ref: 7f08073c</item>
+        <item>?unknown_ref: 7f08073d</item>
+        <item>?unknown_ref: 7f08073e</item>
+        <item>?unknown_ref: 7f08073f</item>
+        <item>?unknown_ref: 7f080740</item>
+        <item>?unknown_ref: 7f080741</item>
+        <item>?unknown_ref: 7f080742</item>
+        <item>?unknown_ref: 7f080743</item>
+        <item>?unknown_ref: 7f080744</item>
+        <item>?unknown_ref: 7f080745</item>
+        <item>?unknown_ref: 7f080747</item>
+        <item>?unknown_ref: 7f080748</item>
+        <item>?unknown_ref: 7f080749</item>
+        <item>?unknown_ref: 7f08074a</item>
+        <item>?unknown_ref: 7f08074b</item>
+        <item>?unknown_ref: 7f08074c</item>
+        <item>?unknown_ref: 7f08074d</item>
+        <item>?unknown_ref: 7f08074e</item>
+    </array>
+    <array name="label_material_simple">
+        <item>?unknown_ref: 7f080772</item>
+        <item>?unknown_ref: 7f080773</item>
+        <item>?unknown_ref: 7f080774</item>
+        <item>?unknown_ref: 7f080775</item>
+        <item>?unknown_ref: 7f080776</item>
+    </array>
+    <array name="label_material_vegetable">
+        <item>?unknown_ref: 7f0807aa</item>
+        <item>?unknown_ref: 7f0807ad</item>
+        <item>?unknown_ref: 7f0807ae</item>
+        <item>?unknown_ref: 7f0807af</item>
+        <item>?unknown_ref: 7f0807b0</item>
+        <item>?unknown_ref: 7f0807b1</item>
+        <item>?unknown_ref: 7f0807b2</item>
+        <item>?unknown_ref: 7f0807b3</item>
+        <item>?unknown_ref: 7f0807b4</item>
+        <item>?unknown_ref: 7f0807ab</item>
+        <item>?unknown_ref: 7f0807ac</item>
+    </array>
+    <array name="photo_editor_emoji">
+        <item>u+1f604</item>
+        <item>u+1f603</item>
+        <item>u+1f600</item>
+        <item>u+1f60a</item>
+        <item>u+263a</item>
+        <item>u+1f609</item>
+        <item>u+1f60d</item>
+        <item>u+1f618</item>
+        <item>u+1f61a</item>
+        <item>u+1f617</item>
+        <item>u+1f619</item>
+        <item>u+1f61c</item>
+        <item>u+1f61d</item>
+        <item>u+1f61b</item>
+        <item>u+1f633</item>
+        <item>u+1f601</item>
+        <item>u+1f614</item>
+        <item>u+1f60c</item>
+        <item>u+1f612</item>
+        <item>u+1f61e</item>
+        <item>u+1f623</item>
+        <item>u+1f622</item>
+        <item>u+1f602</item>
+        <item>u+1f62d</item>
+        <item>u+1f62a</item>
+        <item>u+1f625</item>
+        <item>u+1f630</item>
+        <item>u+1f605</item>
+        <item>u+1f613</item>
+        <item>u+1f629</item>
+        <item>u+1f62b</item>
+        <item>u+1f628</item>
+        <item>u+1f631</item>
+        <item>u+1f620</item>
+        <item>u+1f621</item>
+        <item>u+1f624</item>
+    </array>
+</resources>

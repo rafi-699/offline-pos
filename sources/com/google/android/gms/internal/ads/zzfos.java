@@ -1,0 +1,17 @@
+package com.google.android.gms.internal.ads;
+
+import java.util.concurrent.Callable;
+
+/* JADX INFO: compiled from: com.google.android.gms:play-services-ads@@25.2.0 */
+/* JADX INFO: loaded from: classes3.dex */
+final /* synthetic */ class zzfos implements Callable {
+    static final /* synthetic */ zzfos zza = new zzfos();
+
+    private /* synthetic */ zzfos() {
+    }
+
+    @Override // java.util.concurrent.Callable
+    public final /* synthetic */ Object call() {
+        return null;
+    }
+}

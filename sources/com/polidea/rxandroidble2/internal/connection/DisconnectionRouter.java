@@ -1,0 +1,96 @@
+package com.polidea.rxandroidble2.internal.connection;
+
+import bleshadow.javax.inject.Inject;
+import bleshadow.javax.inject.Named;
+import com.jakewharton.rxrelay2.BehaviorRelay;
+import com.polidea.rxandroidble2.RxBleAdapterStateObservable;
+import com.polidea.rxandroidble2.exceptions.BleDisconnectedException;
+import com.polidea.rxandroidble2.exceptions.BleException;
+import com.polidea.rxandroidble2.exceptions.BleGattException;
+import com.polidea.rxandroidble2.internal.DeviceModule;
+import com.polidea.rxandroidble2.internal.RxBleLog;
+import com.polidea.rxandroidble2.internal.util.RxBleAdapterWrapper;
+import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
+
+/* JADX INFO: loaded from: classes4.dex */
+@ConnectionScope
+class DisconnectionRouter implements DisconnectionRouterInput, DisconnectionRouterOutput {
+    private final BehaviorRelay<BleException> bleExceptionBehaviorRelay;
+    private final Observable<Object> firstDisconnectionExceptionObs;
+    private final Observable<BleException> firstDisconnectionValueObs;
+
+    @Inject
+    DisconnectionRouter(@Named(DeviceModule.MAC_ADDRESS) final String str, RxBleAdapterWrapper rxBleAdapterWrapper, Observable<RxBleAdapterStateObservable.BleAdapterState> observable) {
+        BehaviorRelay<BleException> behaviorRelayCreate = BehaviorRelay.create();
+        this.bleExceptionBehaviorRelay = behaviorRelayCreate;
+        final Disposable disposableSubscribe = awaitAdapterNotUsable(rxBleAdapterWrapper, observable).map(new Function<Boolean, BleException>() { // from class: com.polidea.rxandroidble2.internal.connection.DisconnectionRouter.3
+            @Override // io.reactivex.functions.Function
+            public BleException apply(Boolean bool) {
+                return BleDisconnectedException.adapterDisabled(str);
+            }
+        }).doOnNext(new Consumer<BleException>() { // from class: com.polidea.rxandroidble2.internal.connection.DisconnectionRouter.2
+            @Override // io.reactivex.functions.Consumer
+            public void accept(BleException bleException) {
+                RxBleLog.v("An exception received, indicating that the adapter has became unusable.", new Object[0]);
+            }
+        }).subscribe(behaviorRelayCreate, new Consumer<Throwable>() { // from class: com.polidea.rxandroidble2.internal.connection.DisconnectionRouter.1
+            @Override // io.reactivex.functions.Consumer
+            public void accept(Throwable th) {
+                RxBleLog.e(th, "Failed to monitor adapter state.", new Object[0]);
+            }
+        });
+        Observable<BleException> observableAutoConnect = behaviorRelayCreate.firstElement().toObservable().doOnTerminate(new Action() { // from class: com.polidea.rxandroidble2.internal.connection.DisconnectionRouter.4
+            @Override // io.reactivex.functions.Action
+            public void run() {
+                disposableSubscribe.dispose();
+            }
+        }).replay().autoConnect(0);
+        this.firstDisconnectionValueObs = observableAutoConnect;
+        this.firstDisconnectionExceptionObs = observableAutoConnect.flatMap(new Function<BleException, ObservableSource<?>>() { // from class: com.polidea.rxandroidble2.internal.connection.DisconnectionRouter.5
+            @Override // io.reactivex.functions.Function
+            public ObservableSource<?> apply(BleException bleException) {
+                return Observable.error(bleException);
+            }
+        });
+    }
+
+    private static Observable<Boolean> awaitAdapterNotUsable(RxBleAdapterWrapper rxBleAdapterWrapper, Observable<RxBleAdapterStateObservable.BleAdapterState> observable) {
+        return observable.map(new Function<RxBleAdapterStateObservable.BleAdapterState, Boolean>() { // from class: com.polidea.rxandroidble2.internal.connection.DisconnectionRouter.7
+            @Override // io.reactivex.functions.Function
+            public Boolean apply(RxBleAdapterStateObservable.BleAdapterState bleAdapterState) {
+                return Boolean.valueOf(bleAdapterState.isUsable());
+            }
+        }).startWith(Boolean.valueOf(rxBleAdapterWrapper.isBluetoothEnabled())).filter(new Predicate<Boolean>() { // from class: com.polidea.rxandroidble2.internal.connection.DisconnectionRouter.6
+            @Override // io.reactivex.functions.Predicate
+            public boolean test(Boolean bool) {
+                return !bool.booleanValue();
+            }
+        });
+    }
+
+    @Override // com.polidea.rxandroidble2.internal.connection.DisconnectionRouterInput
+    public void onDisconnectedException(BleDisconnectedException bleDisconnectedException) {
+        this.bleExceptionBehaviorRelay.accept(bleDisconnectedException);
+    }
+
+    @Override // com.polidea.rxandroidble2.internal.connection.DisconnectionRouterInput
+    public void onGattConnectionStateException(BleGattException bleGattException) {
+        this.bleExceptionBehaviorRelay.accept(bleGattException);
+    }
+
+    @Override // com.polidea.rxandroidble2.internal.connection.DisconnectionRouterOutput
+    public Observable<BleException> asValueOnlyObservable() {
+        return this.firstDisconnectionValueObs;
+    }
+
+    @Override // com.polidea.rxandroidble2.internal.connection.DisconnectionRouterOutput
+    public <T> Observable<T> asErrorOnlyObservable() {
+        return (Observable<T>) this.firstDisconnectionExceptionObs;
+    }
+}

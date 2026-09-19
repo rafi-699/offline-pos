@@ -1,0 +1,78 @@
+package androidx.credentials;
+
+import android.os.Bundle;
+import kotlin.Metadata;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import org.json.JSONObject;
+
+/* JADX INFO: compiled from: CreateRestoreCredentialRequest.kt */
+/* JADX INFO: loaded from: classes.dex */
+@Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0007\u0018\u0000 \u000b2\u00020\u0001:\u0001\u000bB\u001b\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0004\u0010\n¨\u0006\f"}, d2 = {"Landroidx/credentials/CreateRestoreCredentialRequest;", "Landroidx/credentials/CreateCredentialRequest;", "requestJson", "", "isCloudBackupEnabled", "", "<init>", "(Ljava/lang/String;Z)V", "getRequestJson", "()Ljava/lang/String;", "()Z", "Companion", "credentials"}, k = 1, mv = {2, 1, 0}, xi = 48)
+public final class CreateRestoreCredentialRequest extends CreateCredentialRequest {
+    private static final String BUNDLE_KEY_CREATE_RESTORE_CREDENTIAL_REQUEST = "androidx.credentials.BUNDLE_KEY_CREATE_RESTORE_CREDENTIAL_REQUEST";
+    private static final String BUNDLE_KEY_SHOULD_BACKUP_TO_CLOUD = "androidx.credentials.BUNDLE_KEY_SHOULD_BACKUP_TO_CLOUD";
+
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
+    public static final Companion INSTANCE = new Companion(null);
+    private final boolean isCloudBackupEnabled;
+    private final String requestJson;
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public CreateRestoreCredentialRequest(String requestJson) {
+        this(requestJson, false, 2, null);
+        Intrinsics.checkNotNullParameter(requestJson, "requestJson");
+    }
+
+    public /* synthetic */ CreateRestoreCredentialRequest(String str, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(str, (i & 2) != 0 ? true : z);
+    }
+
+    public final String getRequestJson() {
+        return this.requestJson;
+    }
+
+    /* JADX INFO: renamed from: isCloudBackupEnabled, reason: from getter */
+    public final boolean getIsCloudBackupEnabled() {
+        return this.isCloudBackupEnabled;
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    public CreateRestoreCredentialRequest(String requestJson, boolean z) {
+        Intrinsics.checkNotNullParameter(requestJson, "requestJson");
+        Companion companion = INSTANCE;
+        super(RestoreCredential.TYPE_RESTORE_CREDENTIAL, companion.toCredentialDataBundle(requestJson, z), new Bundle(), false, false, companion.getDisplayInfoFromJson(requestJson), null, false);
+        this.requestJson = requestJson;
+        this.isCloudBackupEnabled = z;
+    }
+
+    /* JADX INFO: compiled from: CreateRestoreCredentialRequest.kt */
+    @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u0005H\u0002J\u0018\u0010\n\u001a\u00020\u000b2\u0006\u0010\t\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\rH\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Landroidx/credentials/CreateRestoreCredentialRequest$Companion;", "", "<init>", "()V", "BUNDLE_KEY_CREATE_RESTORE_CREDENTIAL_REQUEST", "", "BUNDLE_KEY_SHOULD_BACKUP_TO_CLOUD", "getDisplayInfoFromJson", "Landroidx/credentials/CreateCredentialRequest$DisplayInfo;", "requestJson", "toCredentialDataBundle", "Landroid/os/Bundle;", "isCloudBackupEnabled", "", "credentials"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public final CreateCredentialRequest.DisplayInfo getDisplayInfoFromJson(String requestJson) {
+            try {
+                String string = new JSONObject(requestJson).getJSONObject("user").getString("id");
+                Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+                return new CreateCredentialRequest.DisplayInfo((CharSequence) string, (CharSequence) null, 2, (DefaultConstructorMarker) (0 == true ? 1 : 0));
+            } catch (Exception unused) {
+                throw new IllegalArgumentException("user.id must be defined in requestJson");
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public final Bundle toCredentialDataBundle(String requestJson, boolean isCloudBackupEnabled) {
+            Bundle bundle = new Bundle();
+            bundle.putString(CreateRestoreCredentialRequest.BUNDLE_KEY_CREATE_RESTORE_CREDENTIAL_REQUEST, requestJson);
+            bundle.putBoolean(CreateRestoreCredentialRequest.BUNDLE_KEY_SHOULD_BACKUP_TO_CLOUD, isCloudBackupEnabled);
+            return bundle;
+        }
+    }
+}
